@@ -11,4 +11,4 @@ class Pessoa {
 }
 
 const Eu = new Pessoa ('Marcelly', '20');
-console.log(Eu.apresentar())
+console.log(Eu.apresentar());
