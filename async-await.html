@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async-Await</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //somente com promisses 
+//async usa-se no início da função
+//await usado para avisar a função para esperar a promisse 
+//await só pode ser usado para uma função com assync
+
+// Função async para buscar usuários do GitHub
+async function getUsers(){
+        try {
+            const response = await fetch('https://api.github.com/users');
+            const data = await response.json();
+
+            // Mapeando e exibindo os nomes de login no console
+            return data.map(user => {
+                console.log(user.followers_url); // Exibindo o login dos usuários
+            });
+        } catch (error) {
+            console.error('Erro ao buscar os usuários:', error);
+        }
+    }
+
+    // Chamando a função para buscar os usuários
+    getUsers();
+</script>
+</html>
